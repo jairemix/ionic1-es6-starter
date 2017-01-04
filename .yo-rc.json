@@ -1,0 +1,17 @@
+{
+  "generator-m-ionic": {
+    "answers": {
+      "appName": "Starter",
+      "appId": "com.sample.starter",
+      "ionicCss": false,
+      "bowerPackages": [],
+      "platforms": [
+        "ios",
+        "android"
+      ],
+      "plugins": [],
+      "appModule": "starter",
+      "ecosystems": []
+    }
+  }
+}

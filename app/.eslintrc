@@ -1,0 +1,21 @@
+{
+  "extends": "../.eslintrc",
+  "env": {
+    "node": false,
+    "browser": true
+  },
+  "parserOptions": {
+    "ecmaVersion": 2015
+  },
+  "globals": {
+    "angular": true,
+    "ionic": true,
+    "_": true,
+    "cordova": true
+  },
+  "rules": {
+    "no-console": 0,
+    "camelcase": 0,
+    "indent": 1
+  }
+}
