@@ -3,6 +3,9 @@
   "env": {
     "jasmine": true
   },
+  "parserOptions": {
+    "ecmaVersion": 2015
+  },
   "globals": {
     "inject": true,
     "module": true

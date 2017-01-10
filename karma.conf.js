@@ -40,7 +40,9 @@ module.exports = function (config) {
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
-      'app/**/templates/*.html': ['ng-html2js']
+      'app/**/templates/**/*.html': ['ng-html2js'],
+      'app/!(bower_components)/**/*.js': ['babel'],
+      'test/karma/**/*.js': ['babel']
     },
 
     // use template cache to avoid unexpected $http requests from ui-router
@@ -48,6 +50,19 @@ module.exports = function (config) {
     ngHtml2JsPreprocessor: {
       moduleName: 'ngHtml2Js',
       stripPrefix: 'app/' // the path must be relative to the app.js
+    },
+
+    babelPreprocessor: {
+      options: {
+        presets: ['es2015'],
+        sourceMap: 'inline'
+      },
+      filename: function (file) {
+        return file.originalPath.replace(/\.js$/, '.es5.js');
+      },
+      sourceFileName: function (file) {
+        return file.originalPath;
+      }
     },
 
     // test results reporter to use

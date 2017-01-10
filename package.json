@@ -44,6 +44,7 @@
     "gulp-useref": "^3.0.4",
     "karma": "^1.1.0",
     "karma-angular-filesort": "^1.0.0",
+    "karma-babel-preprocessor": "^6.0.1",
     "karma-jasmine": "^1.0.2",
     "karma-ng-html2js-preprocessor": "^1.0.0",
     "karma-phantomjs-launcher": "^1.0.0",
