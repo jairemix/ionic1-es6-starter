@@ -10,6 +10,8 @@ var $ = require('gulp-load-plugins')();
 var Server = require('karma').Server;
 var bs = require('browser-sync');
 
+const spawn = require('child_process').spawn;
+
 // KARMA
 function runKarma (singleRun, done) {
   new Server({
@@ -59,4 +61,14 @@ gulp.task('protractor-build', protractorBuildDeps, function (done) {
   gulp.start('linting');
 
   runProtractor(done);
+});
+
+/***** running of local server for testing ******/
+
+gulp.task('test-server', () => {
+  // console.log('🐚  these are my options', options);
+  options.env = 'local';
+  // console.log('🐚  change environment to local', options);
+  gulp.start('environment');
+  spawn('node', ['local-server.js'], { stdio: 'inherit' });
 });
