@@ -1,6 +1,24 @@
 'use strict';
 
-angular.module('starter')
+angular.module('starter.main', [
+  'ionic'
+])
+
+.run(function ($ionicPlatform) {
+  $ionicPlatform.ready(function () {
+    // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
+    // for form inputs)
+    if (window.cordova && window.cordova.plugins && window.cordova.plugins.Keyboard) {
+      cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
+      cordova.plugins.Keyboard.disableScroll(true);
+
+    }
+    if (window.StatusBar) {
+      // org.apache.cordova.statusbar required
+      window.StatusBar.styleDefault();
+    }
+  });
+})
 
 .config(function ($stateProvider, $urlRouterProvider) {
 
@@ -62,5 +80,3 @@ angular.module('starter')
   $urlRouterProvider.otherwise('/tab/dash');
 
 });
-
-
