@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('starter')
+angular.module('starter.main')
 
 .controller('AccountCtrl', function ($scope) {
   $scope.settings = {

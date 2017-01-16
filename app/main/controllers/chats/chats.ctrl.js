@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('starter')
+angular.module('starter.main')
 
 .controller('ChatsCtrl', function ($scope, Chats) {
   // With the new view caching in Ionic, Controllers are only called
